@@ -65,3 +65,5 @@ class Pet(models.Model):
         return f'{self.user}- petname:{self.pet_name}'
 class Food(models.Model):
     breed_name=models.ForeignKey('Breed', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.breed_name
