@@ -3,5 +3,8 @@ from . import models
 
 # Register your models here.
 admin.site.register(models.SampleDB)
-admin.site.register(models.Animal)
+admin.site.register(models.UserDetail)
+admin.site.register(models.Species)
+admin.site.register(models.Division)
 admin.site.register(models.Breed)
+admin.site.register(models.Pet)
