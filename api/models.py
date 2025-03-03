@@ -65,17 +65,28 @@ class Pet(models.Model):
         return f'{self.user}- petname:{self.pet_name}'
 class Food(models.Model):
     breed_name=models.ForeignKey('Breed', on_delete=models.CASCADE)
+    food_type=[
+        ('dry food','dry food'),
+        ('wet food','wet food'),
+        ('treats','treats')
+    ]
+    food_name=models.CharField(choices=food_type, max_length=50,default=None,null=True)
+    brand_name=models.CharField( max_length=50 ,default=None,null=True)
+    
     def __str__(self):
         return self.breed_name
 class Health(models.Model):
     breed_name=models.ForeignKey('Breed', on_delete=models.CASCADE)
     def __str__(self):
         return self.breed_name
-class Toys(models.Model):
+
+class Product(models.Model):
     breed_name=models.ForeignKey('Breed', on_delete=models.CASCADE)
+    product_type=[
+        ('toys','toys'),
+        ('accessories','accessories')
+    ]
+    
+    product_name=models.CharField( choices=product_type,max_length=50)
     def __str__(self):
-        return self.breed_name
-class Accessories(models.Model):
-    breed_name=models.ForeignKey('Breed', on_delete=models.CASCADE)
-    def __str__(self):
-        return self.breed_name
+        return f'{self.breed_name}-{self.product_name}'
