@@ -75,8 +75,9 @@ class Food(models.Model):
     
     def __str__(self):
         return self.breed_name
-class Health(models.Model):
+class Medicine(models.Model):
     breed_name=models.ForeignKey('Breed', on_delete=models.CASCADE)
+
     def __str__(self):
         return self.breed_name
 
@@ -88,5 +89,6 @@ class Product(models.Model):
     ]
     
     product_name=models.CharField( choices=product_type,max_length=50)
+    product=models.CharField('Product',max_length=50,default=None,null=True)
     def __str__(self):
         return f'{self.breed_name}-{self.product_name}'
