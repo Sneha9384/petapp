@@ -135,4 +135,21 @@ class Ratings(models.Model):
     def __str__(self):
         return self.user_name
     
-    
+class Cart(models.Model):
+    item_id=models.CharField(max_length=50)
+    quantity=models.IntegerField()
+    user=models.ForeignKey('UserDetail', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.item_id}-{self.user}-{self.quantity}'
+        
+class OrderDetail(models.Model):
+    user=models.ForeignKey('UserDetail', on_delete=models.CASCADE)
+    phone_number=models.IntegerField()
+    country=models.CharField(max_length=50)
+    state=models.CharField( max_length=50)
+    pincode=models.IntegerField()
+    district=models.CharField( max_length=50)
+    street=models.CharField( max_length=50)
+    landmark=models.CharField( max_length=50)
+    door_no=models.IntegerField()

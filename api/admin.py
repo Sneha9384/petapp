@@ -11,3 +11,7 @@ admin.site.register(models.Pet)
 admin.site.register(models.Food)
 admin.site.register(models.Medicine)
 admin.site.register(models.Product)
+admin.site.register(models.Cart)
+admin.site.register(models.OrderDetail)
+
+
