@@ -15,4 +15,3 @@ class UserDetail(APIView):
         print('Hello')
 
         return Response({'msg':'fetching all'},status=status.HTTP_200_OK)
-            
